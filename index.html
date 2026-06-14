@@ -1,66 +1,550 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="si">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NetVista - Privacy Policy & Terms</title>
-    <style>
-        body { font-family: sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f4f4f4; }
-        .container { background: white; padding: 40px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        h1 { color: #d32f2f; border-bottom: 2px solid #d32f2f; padding-bottom: 10px; }
-        h2 { color: #2c3e50; margin-top: 30px; }
-        .last-updated { font-style: italic; color: #777; }
-        .contact { background: #e9ecef; padding: 15px; border-radius: 5px; margin-top: 20px; }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NetWedha – Privacy Policy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Sinhala:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #0b0f1a;
+      --surface: #131929;
+      --border: #1e2d45;
+      --accent: #00c2ff;
+      --accent2: #0077b6;
+      --text: #e4eaf4;
+      --muted: #7a8faa;
+      --danger: #ff6b6b;
+      --warning: #ffd166;
+      --radius: 12px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', 'Noto Sans Sinhala', sans-serif;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    /* ── Header ── */
+    header {
+      background: linear-gradient(135deg, #0b0f1a 0%, #0d1b33 100%);
+      border-bottom: 1px solid var(--border);
+      padding: 48px 24px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute;
+      top: -60px; left: 50%; transform: translateX(-50%);
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(0,194,255,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .logo-mark {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .logo-icon {
+      width: 44px; height: 44px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px;
+    }
+    .logo-text {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--text);
+    }
+    .logo-text span { color: var(--accent); }
+    h1 {
+      font-size: clamp(26px, 5vw, 40px);
+      font-weight: 700;
+      letter-spacing: -1px;
+      line-height: 1.2;
+      margin-bottom: 12px;
+    }
+    h1 em {
+      font-style: normal;
+      background: linear-gradient(90deg, var(--accent), #a78bfa);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 8px;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(0,194,255,0.1);
+      border: 1px solid rgba(0,194,255,0.3);
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 99px;
+      margin-top: 16px;
+      letter-spacing: 0.5px;
+    }
+
+    /* ── Layout ── */
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 48px 24px 80px;
+    }
+
+    /* ── TOC ── */
+    .toc {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      margin-bottom: 40px;
+    }
+    .toc h2 {
+      font-size: 13px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+    .toc ol {
+      padding-left: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 24px;
+    }
+    @media(max-width:500px){ .toc ol { grid-template-columns: 1fr; } }
+    .toc a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 13px;
+      transition: color .2s;
+      cursor: pointer;
+    }
+    .toc a:hover { color: var(--accent); }
+
+    /* ── Sections ── */
+    section {
+      margin-bottom: 44px;
+      scroll-margin-top: 24px;
+    }
+    section h2 {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 16px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    section h2 .icon {
+      width: 32px; height: 32px;
+      background: rgba(0,194,255,0.1);
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+      flex-shrink: 0;
+    }
+    p { margin-bottom: 14px; color: var(--text); }
+    p:last-child { margin-bottom: 0; }
+
+    /* ── Permission Table ── */
+    .perm-grid {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .perm-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 18px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .perm-icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+    .perm-name { font-weight: 600; font-size: 14px; color: var(--text); }
+    .perm-desc { font-size: 13px; color: var(--muted); margin-top: 2px; }
+
+    /* ── Info Box ── */
+    .info-box {
+      border-radius: 10px;
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 14px;
+    }
+    .info-box.warning {
+      background: rgba(255,209,102,0.08);
+      border: 1px solid rgba(255,209,102,0.25);
+      color: var(--warning);
+    }
+    .info-box.danger {
+      background: rgba(255,107,107,0.08);
+      border: 1px solid rgba(255,107,107,0.25);
+      color: var(--danger);
+    }
+    .info-box.info {
+      background: rgba(0,194,255,0.07);
+      border: 1px solid rgba(0,194,255,0.2);
+      color: var(--accent);
+    }
+    .info-box strong { display: block; margin-bottom: 4px; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    /* ── List ── */
+    ul.policy-list {
+      padding-left: 0;
+      list-style: none;
+      display: grid;
+      gap: 8px;
+      margin: 12px 0;
+    }
+    ul.policy-list li {
+      padding-left: 22px;
+      position: relative;
+      font-size: 14px;
+      color: var(--text);
+    }
+    ul.policy-list li::before {
+      content: '›';
+      position: absolute;
+      left: 6px;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* ── Contact ── */
+    .contact-card {
+      background: linear-gradient(135deg, rgba(0,194,255,0.07), rgba(167,139,250,0.07));
+      border: 1px solid rgba(0,194,255,0.2);
+      border-radius: var(--radius);
+      padding: 28px;
+      text-align: center;
+    }
+    .contact-card h3 { font-size: 18px; margin-bottom: 8px; }
+    .contact-card a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      padding: 32px 24px;
+      border-top: 1px solid var(--border);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+
+    /* ── Lang toggle ── */
+    .lang-row {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 32px;
+      gap: 8px;
+    }
+    .lang-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 600;
+      padding: 6px 14px;
+      border-radius: 99px;
+      cursor: pointer;
+      transition: all .2s;
+    }
+    .lang-btn.active, .lang-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>NetVista - Privacy Policy & Terms</h1>
-        <p class="last-updated">Last Updated: May 2024</p>
 
-        <p>Welcome to <strong>NetVista</strong>. Your privacy is critically important to us. This document explains how we collect, use, and protect your information when you use our application.</p>
+<header>
+  <div class="logo-mark">
+    <div class="logo-icon">📡</div>
+    <span class="logo-text">Net<span>Wedha</span></span>
+  </div>
+  <h1>Privacy <em>Policy</em></h1>
+  <p class="subtitle">රහස්‍යතා ප්‍රතිපත්තිය · Privacy Policy</p>
+  <span class="badge">Version 2.03.1 · Effective June 2025</span>
+</header>
 
-        <h2>1. Information We Collect</h2>
-        <ul>
-            <li><strong>Location Information:</strong> We require access to your device's location (Foreground & Background) to identify cellular towers and map signal strength accurately.</li>
-            <li><strong>Device Information:</strong> We collect device model, manufacturer, and Android ID for security, compatibility, and app performance monitoring.</li>
-            <li><strong>Network & Signal Data:</strong> We monitor signal strength (RSRP, RSRQ), network type (4G, 5G), Cell ID, and Band information to provide core features.</li>
-            <li><strong>User Account Data:</strong> If you sign in, we collect your email address via Firebase Authentication.</li>
-        </ul>
+<div class="container">
 
-        <h2>2. How We Use Your Information</h2>
-        <p>We use the collected data to:</p>
-        <ul>
-            <li>Display real-time network signal strength.</li>
-            <li>Provide a map view of nearby network towers.</li>
-            <li>Analyze and improve network performance for all users.</li>
-        </ul>
+  <div class="lang-row">
+    <button class="lang-btn active">සිංහල / English</button>
+  </div>
 
-        <h2>3. Third-Party Services</h2>
-        <p>Our app uses the following third-party services which may collect information used to identify you:</p>
-        <ul>
-            <li><strong>Google Play Services:</strong> Core Android functionality.</li>
-            <li><strong>Firebase:</strong> For authentication and analytics.</li>
-            <li><strong>AdMob:</strong> To display advertisements.</li>
-            <li><strong>OSMDroid:</strong> To provide map services.</li>
-        </ul>
+  <!-- TOC -->
+  <div class="toc">
+    <h2>📋 Contents</h2>
+    <ol>
+      <li><a href="#intro">හඳුන්වාදීම / Introduction</a></li>
+      <li><a href="#collect">එකතු කරන දත්ත / Data We Collect</a></li>
+      <li><a href="#permissions">Permissions</a></li>
+      <li><a href="#usage">දත්ත භාවිතය / How We Use Data</a></li>
+      <li><a href="#third">තෙවන පාර්ශ්ව / Third Parties</a></li>
+      <li><a href="#storage">ගබඩා කිරීම / Data Storage</a></li>
+      <li><a href="#rights">ඔබේ අයිතිවාසිකම් / Your Rights</a></li>
+      <li><a href="#children">ළමා ආරක්ෂාව / Children</a></li>
+      <li><a href="#changes">වෙනස්කම් / Changes</a></li>
+      <li><a href="#contact">සම්බන්ධ වන්න / Contact</a></li>
+    </ol>
+  </div>
 
-        <h2>4. Data Retention & Deletion</h2>
-        <p>You can request the deletion of your account and associated data at any time by contacting us at the email address provided below. We will process your request within a reasonable timeframe.</p>
-
-        <h2>5. Terms and Conditions</h2>
-        <p>By using NetVista, you agree to:</p>
-        <ul>
-            <li>Grant necessary permissions (Location, Phone State) for the app to function.</li>
-            <li>Not use the app for any illegal or unauthorized activities.</li>
-            <li>Accept that signal data accuracy depends on your device hardware and provider.</li>
-        </ul>
-
-        <div class="contact">
-            <h2>6. Contact Us</h2>
-            <p>If you have any questions or suggestions about our Privacy Policy or Terms, do not hesitate to contact us at:</p>
-            <p><strong>Email:</strong> <a href="mailto:sripci.dev@gmail.com">sripci.dev@gmail.com</a></p>
-        </div>
+  <!-- 1. Intro -->
+  <section id="intro">
+    <h2><span class="icon">👋</span> හඳුන්වාදීම / Introduction</h2>
+    <p>
+      <strong>NetWedha</strong> (<code>com.sripci.netvistasl</code>) යනු Sri Lanka හි network monitoring, signal analysis, speed testing සහ community features සඳහා නිර්මාණය කරන ලද Android application එකකි.
+    </p>
+    <p>
+      <em>NetWedha is an Android application designed for Sri Lanka, providing network monitoring, signal analysis, speed testing, and community features via NetSabawa.</em>
+    </p>
+    <div class="info-box info">
+      <strong>📌 Important</strong>
+      මෙම privacy policy එක app version 2.03.1 සඳහා අදාළ වේ. App download හෝ install කිරීමෙන් ඔබ මෙම policy එකට එකඟ වෙයි.
     </div>
+  </section>
+
+  <!-- 2. Data Collect -->
+  <section id="collect">
+    <h2><span class="icon">📊</span> එකතු කරන දත්ත / Data We Collect</h2>
+    <p>App එක භාවිතා කිරීමේදී පහත දත්ත එකතු කළ හැකිය:</p>
+
+    <ul class="policy-list">
+      <li><strong>Location Data:</strong> Network signal strength map කිරීම සහ GPS test features සඳහා ඔබේ location භාවිතා කෙරේ.</li>
+      <li><strong>Network Information:</strong> WiFi SSID, signal strength, connection type, IP details.</li>
+      <li><strong>Device Information:</strong> Phone model, OS version, SIM carrier details, phone number (Dual SIM Comparator සඳහා).</li>
+      <li><strong>Usage Data:</strong> App features භාවිතා කරන ආකාරය, error logs.</li>
+      <li><strong>NetSabawa Content:</strong> ඔබ post කරන content, comments, images/videos.</li>
+      <li><strong>Speed Test Results:</strong> Download/upload speed, latency measurements.</li>
+    </ul>
+
+    <div class="info-box warning">
+      <strong>⚠️ Note</strong>
+      Location data real-time වශයෙන් server එකට නොයවනු ලැබේ. Signal mapping features සඳහා පමණක් භාවිතා කෙරේ.
+    </div>
+  </section>
+
+  <!-- 3. Permissions -->
+  <section id="permissions">
+    <h2><span class="icon">🔐</span> App Permissions</h2>
+    <p>NetWedha app ක‌ෙට් මෙම permissions ඉල්ලනු ලැබේ:</p>
+
+    <div class="perm-grid">
+      <div class="perm-item">
+        <span class="perm-icon">📍</span>
+        <div>
+          <div class="perm-name">Location (Fine & Coarse)</div>
+          <div class="perm-desc">Signal strength mapping, GPS Test feature, සහ network coverage analysis සඳහා.</div>
+        </div>
+      </div>
+      <div class="perm-item">
+        <span class="perm-icon">📶</span>
+        <div>
+          <div class="perm-name">WiFi & Network State</div>
+          <div class="perm-desc">WiFi analysis, network monitoring, speed test features සඳහා.</div>
+        </div>
+      </div>
+      <div class="perm-item">
+        <span class="perm-icon">📱</span>
+        <div>
+          <div class="perm-name">Phone State & Phone Numbers</div>
+          <div class="perm-desc">Dual SIM Comparator feature සඳහා SIM card details කියවීම. ඔබේ calls record නොකෙරේ.</div>
+        </div>
+      </div>
+      <div class="perm-item">
+        <span class="perm-icon">💾</span>
+        <div>
+          <div class="perm-name">Storage Access</div>
+          <div class="perm-desc">Downloaded files save කිරීම, NetSabawa media upload කිරීම, log files save කිරීම සඳහා.</div>
+        </div>
+      </div>
+      <div class="perm-item">
+        <span class="perm-icon">🔵</span>
+        <div>
+          <div class="perm-name">Bluetooth</div>
+          <div class="perm-desc">Nearby device scanning සහ network diagnostics සඳහා.</div>
+        </div>
+      </div>
+      <div class="perm-item">
+        <span class="perm-icon">🔔</span>
+        <div>
+          <div class="perm-name">Notifications</div>
+          <div class="perm-desc">Download progress, network alerts, සහ NetSabawa notifications සඳහා.</div>
+        </div>
+      </div>
+      <div class="perm-item">
+        <span class="perm-icon">🔄</span>
+        <div>
+          <div class="perm-name">Boot Completed</div>
+          <div class="perm-desc">Network monitor service phone restart වෙනකොට restart කිරීම සඳහා.</div>
+        </div>
+      </div>
+      <div class="perm-item">
+        <span class="perm-icon">📊</span>
+        <div>
+          <div class="perm-name">Package Usage Stats</div>
+          <div class="perm-desc">Data usage tracking features සඳහා. ඔබේ data third parties ට share නොකෙරේ.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Usage -->
+  <section id="usage">
+    <h2><span class="icon">⚙️</span> දත්ත භාවිතය / How We Use Your Data</h2>
+    <p>එකතු කරන data මෙලෙස භාවිතා කෙරේ:</p>
+    <ul class="policy-list">
+      <li>App features (speed test, signal finder, GPS test) provide කිරීම සඳහා</li>
+      <li>NetSabawa community platform operate කිරීම සඳහා</li>
+      <li>App performance improve කිරීම සහ bugs fix කිරීම සඳහා</li>
+      <li>Push notifications send කිරීම සඳහා (Firebase)</li>
+      <li>Crash reports analyze කිරීම සඳහා</li>
+    </ul>
+    <div class="info-box info">
+      <strong>✅ We do NOT</strong>
+      ඔබේ personal data sell නොකරයි · ඔබේ calls record නොකරයි · ඔබේ messages read නොකරයි
+    </div>
+  </section>
+
+  <!-- 5. Third Parties -->
+  <section id="third">
+    <h2><span class="icon">🤝</span> තෙවන පාර්ශ්ව / Third-Party Services</h2>
+    <p>NetWedha app එක මෙම third-party services භාවිතා කරයි:</p>
+
+    <div class="perm-grid">
+      <div class="perm-item">
+        <span class="perm-icon">🗺️</span>
+        <div>
+          <div class="perm-name">Mapbox</div>
+          <div class="perm-desc">Signal coverage maps display කිරීම සඳහා. <a href="https://www.mapbox.com/legal/privacy" style="color:var(--accent)">Mapbox Privacy Policy</a></div>
+        </div>
+      </div>
+      <div class="perm-item">
+        <span class="perm-icon">🔥</span>
+        <div>
+          <div class="perm-name">Google Firebase</div>
+          <div class="perm-desc">Push notifications, authentication, crash reporting සඳහා. <a href="https://firebase.google.com/support/privacy" style="color:var(--accent)">Firebase Privacy Policy</a></div>
+        </div>
+      </div>
+      <div class="perm-item">
+        <span class="perm-icon">📢</span>
+        <div>
+          <div class="perm-name">Google AdMob</div>
+          <div class="perm-desc">In-app advertisements display කිරීම සඳහා. Ads personalize කිරීමට anonymous data භාවිතා කළ හැකිය. <a href="https://policies.google.com/privacy" style="color:var(--accent)">Google Privacy Policy</a></div>
+        </div>
+      </div>
+      <div class="perm-item">
+        <span class="perm-icon">🔑</span>
+        <div>
+          <div class="perm-name">Google Sign-In</div>
+          <div class="perm-desc">NetSabawa login සඳහා Google account use කිරීමට option.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-box warning">
+      <strong>⚠️ AdMob Note</strong>
+      Google AdMob ඔබේ device advertising ID භාවිතා කළ හැකිය. Settings → Privacy → Ads හිදී ad personalization opt-out කළ හැකිය.
+    </div>
+  </section>
+
+  <!-- 6. Storage -->
+  <section id="storage">
+    <h2><span class="icon">🗄️</span> දත්ත ගබඩා කිරීම / Data Storage & Security</h2>
+    <p>
+      ඔබේ data Firebase (Google Cloud) servers හිදී securely store කෙරේ. NetSabawa community content app servers හිදී store කෙරේ.
+    </p>
+    <ul class="policy-list">
+      <li>Data encrypted transit (HTTPS/TLS) හිදී transfer කෙරේ</li>
+      <li>Account delete කළ හොත් ඔබේ personal data 30 days ඇතුළත delete කෙරේ</li>
+      <li>Speed test results anonymized ලෙස aggregate statistics සඳහා store කළ හැකිය</li>
+      <li>Log files device එකේ locally store කෙරේ; server upload නොකෙරේ</li>
+    </ul>
+  </section>
+
+  <!-- 7. Rights -->
+  <section id="rights">
+    <h2><span class="icon">⚖️</span> ඔබේ අයිතිවාසිකම් / Your Rights</h2>
+    <p>ඔබට පහත අයිතිවාසිකම් ඇත:</p>
+    <ul class="policy-list">
+      <li><strong>Access:</strong> ඔබ ගැන store කර ඇති data request කිරීම</li>
+      <li><strong>Correction:</strong> Incorrect data correct කිරීම</li>
+      <li><strong>Deletion:</strong> ඔබේ account සහ data delete කිරීම</li>
+      <li><strong>Opt-out:</strong> Marketing notifications turn off කිරීම</li>
+      <li><strong>Portability:</strong> ඔබේ data export කිරීම</li>
+    </ul>
+    <p>ඕනෑම request එකක් සඳහා contact form හෝ email ඔස්සේ contact කරන්න.</p>
+  </section>
+
+  <!-- 8. Children -->
+  <section id="children">
+    <h2><span class="icon">👶</span> ළමා ආරක්ෂාව / Children's Privacy</h2>
+    <p>
+      NetWedha app එක වයස අවුරුදු <strong>13</strong> ට අඩු ළමුන් සඳහා නිර්මාණය කර නොමැත. අපි වයස 13 ට අඩු ළමුන්ගේ personal data knowingly collect නොකරමු.
+    </p>
+    <div class="info-box danger">
+      <strong>🚨 Parents / Guardians</strong>
+      ඔබේ child app használ කරන බව දැනගත්තොත් හෝ data collect කර ඇති බව සිතේ නම්, වහාම contact කරන්න. ඒ data delete කිරීමට අපි කටයුතු කරමු.
+    </div>
+  </section>
+
+  <!-- 9. Changes -->
+  <section id="changes">
+    <h2><span class="icon">📝</span> Policy වෙනස්කම් / Changes to This Policy</h2>
+    <p>
+      Privacy policy update කළ හොත් app notification හෝ email ඔස්සේ ඔබව දැනුවත් කෙරේ. Policy effective date app launch screen හිදී සහ GitHub repository හිදී display කෙරේ.
+    </p>
+    <p>
+      Significant changes හොත් app update හිදී changelog හිදී ද note කෙරේ.
+    </p>
+  </section>
+
+  <!-- 10. Contact -->
+  <section id="contact">
+    <h2><span class="icon">📬</span> සම්බන්ධ වන්න / Contact Us</h2>
+    <div class="contact-card">
+      <h3>NetWedha – Developer</h3>
+      <p style="color:var(--muted); font-size:14px; margin: 8px 0 16px;">
+        Privacy සම්බන්ධ ඕනෑම ප්‍රශ්නයක් සඳහා contact කරන්න:
+      </p>
+      <p>📧 <a href="mailto:support@netwedhasl.lk">support@netwedhasl.lk</a></p>
+      <p style="margin-top:8px;">🐙 <a href="https://github.com.sripci.netvistasl" target="_blank">github.com.sripci.netvistasl</a></p>
+      <p style="margin-top: 16px; font-size: 13px; color: var(--muted);">
+        Response time: 3–5 business days
+      </p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <p>© 2025 NetWedha · <code>com.sripci.netvistasl</code></p>
+  <p style="margin-top:6px;">Last updated: June 2025 · Version 2.03.1</p>
+</footer>
+
 </body>
-</html>
+    </html>
